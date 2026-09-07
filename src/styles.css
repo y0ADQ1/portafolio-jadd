@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paleta obligatoria según la Skill */
+    --portfolio-black: #000000;
+    --portfolio-white: #ffffff;
+
+    --portfolio-gray-100: #f5f5f5;
+    --portfolio-gray-200: #e5e5e5;
+    --portfolio-gray-400: #999999;
+    --portfolio-gray-600: #666666;
+    --portfolio-gray-800: #333333;
+
+    /* Espaciado */
+    --portfolio-space-xs: 8px;
+    --portfolio-space-sm: 16px;
+    --portfolio-space-md: 24px;
+    --portfolio-space-lg: 48px;
+    --portfolio-space-xl: 96px;
+
+    /* Bordes */
+    --portfolio-radius-sm: 4px;
+    --portfolio-radius-md: 12px;
+    --portfolio-radius-lg: 24px;
+  }
+
+  body {
+    @apply bg-portfolio-black text-portfolio-white font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Configuraciones Globales Adicionales */
+html {
+  scroll-behavior: auto; /* Desactivado por GSAP ScrollTrigger para control preciso */
+}
+
+/* Ocultar barra de desplazamiento si se desea experiencia limpia completa (Opcional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--portfolio-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--portfolio-gray-800);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--portfolio-gray-600);
+}
