@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   selector: 'app-projects',
   template: `
-    <section class="h-screen w-full flex flex-col pt-24 px-8 md:px-24 pb-32 overflow-y-auto pointer-events-auto" style="scrollbar-width: thin; scrollbar-color: #555 transparent;">
-      <h2 class="text-4xl md:text-6xl font-bold uppercase mb-16 border-b border-portfolio-gray-800 pb-6 tracking-tight shrink-0">Proyectos Destacados</h2>
+    <!-- Panel 1 -->
+    <section class="panel absolute inset-0 flex flex-col pt-24 px-8 md:px-24 pb-32">
+      <h2 class="text-4xl md:text-6xl font-bold uppercase mb-16 border-b border-portfolio-gray-800 pb-6 tracking-tight shrink-0">Proyectos Destacados (1/3)</h2>
       
-      <div class="space-y-24">
-
+      <div class="space-y-16">
         <!-- Proyecto: YacaTec Vales -->
         <article class="relative group">
           <div class="absolute -left-6 top-0 bottom-0 w-1 bg-portfolio-gray-800 group-hover:bg-portfolio-white transition-colors duration-500"></div>
@@ -44,7 +45,15 @@ import { Component } from '@angular/core';
             </a>
           </div>
         </article>
+      </div>
 
+    </section>
+
+    <!-- Panel 2 -->
+    <section class="panel absolute inset-0 flex flex-col pt-24 px-8 md:px-24 pb-32">
+      <h2 class="text-4xl md:text-6xl font-bold uppercase mb-16 border-b border-portfolio-gray-800 pb-6 tracking-tight shrink-0">Proyectos Destacados (2/3)</h2>
+      
+      <div class="space-y-16">
         <!-- Proyecto: FoodOps -->
         <article class="relative group">
           <div class="absolute -left-6 top-0 bottom-0 w-1 bg-portfolio-gray-800 group-hover:bg-portfolio-white transition-colors duration-500"></div>
@@ -79,7 +88,15 @@ import { Component } from '@angular/core';
             </a>
           </div>
         </article>
+      </div>
 
+    </section>
+
+    <!-- Panel 3 -->
+    <section class="panel absolute inset-0 flex flex-col pt-24 px-8 md:px-24 pb-32">
+      <h2 class="text-4xl md:text-6xl font-bold uppercase mb-16 border-b border-portfolio-gray-800 pb-6 tracking-tight shrink-0">Proyectos Destacados (3/3)</h2>
+      
+      <div class="space-y-16">
         <!-- Proyecto: Hotel Laguna Inn -->
         <article class="relative group">
           <div class="absolute -left-6 top-0 bottom-0 w-1 bg-portfolio-gray-800 group-hover:bg-portfolio-white transition-colors duration-500"></div>
@@ -95,9 +112,9 @@ import { Component } from '@angular/core';
             </a>
           </div>
         </article>
-
       </div>
     </section>
   `,
 })
-export class Projects { }
+export class Projects {
+}

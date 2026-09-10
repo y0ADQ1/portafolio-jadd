@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   selector: 'app-hero',
   template: `
@@ -13,9 +14,6 @@ import { Component } from '@angular/core';
         Especializado en el desarrollo Full-Stack, desde la construcción de interfaces intuitivas y backends eficientes, 
         hasta el despliegue seguro en la nube y el diseño óptimo de bases de datos.
       </p>
-      <div class="flex gap-6">
-        <button onclick="document.getElementById('scroll-container').scrollIntoView({behavior: 'smooth', block: 'end'})" class="px-8 py-4 bg-portfolio-white text-portfolio-black font-bold uppercase tracking-widest text-sm hover:bg-portfolio-gray-200 transition-colors">Mis Proyectos</button>
-      </div>
     </section>
   `,
 })

@@ -52,3 +52,8 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--portfolio-gray-600);
 }
+
+/* Optimización de Rendimiento para Animaciones GSAP */
+.panel {
+  will-change: transform, opacity;
+}

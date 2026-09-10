@@ -22,7 +22,7 @@ export class RendererManagerService {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       alpha: true,
-      antialias: true,
+      antialias: false,
       powerPreference: 'high-performance'
     });
     

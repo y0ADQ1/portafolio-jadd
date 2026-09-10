@@ -21,8 +21,8 @@ import { Contact } from './features/contact/contact';
     <canvas #threeCanvas class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
     
     <!-- Contenedor invisible para forzar el scroll nativo. 
-         La altura (800vh) determina la longitud total del viaje. -->
-    <div id="scroll-container" class="w-full h-[800vh]"></div>
+         La altura será calculada dinámicamente por GSAP. -->
+    <div id="scroll-container" class="w-full"></div>
 
     <!-- Contenedor fijo que mantiene las capas visuales fijas en la pantalla -->
     <main class="fixed top-0 left-0 w-full h-screen z-10 pointer-events-none overflow-hidden">
@@ -30,7 +30,7 @@ import { Contact } from './features/contact/contact';
       <app-hero id="hero" class="panel absolute inset-0 block"></app-hero>
       <app-about id="about" class="panel absolute inset-0 block"></app-about>
       <app-stack id="stack" class="panel absolute inset-0 block"></app-stack>
-      <app-projects id="projects" class="panel absolute inset-0 block"></app-projects>
+      <app-projects id="projects" class="absolute inset-0 block"></app-projects>
       <app-experience id="experience" class="panel absolute inset-0 block"></app-experience>
       <app-contact id="contact" class="panel absolute inset-0 block"></app-contact>
     </main>

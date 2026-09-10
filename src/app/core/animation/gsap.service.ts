@@ -27,6 +27,11 @@ export class GsapService {
       const panels = gsap.utils.toArray('.panel') as HTMLElement[];
       const totalPanels = panels.length;
       
+      const scrollContainer = document.getElementById('scroll-container');
+      if (scrollContainer) {
+        scrollContainer.style.height = `${totalPanels * 150}vh`;
+      }
+      
       // Estado inicial:
       // Hero (panel 0) inicia visible y en escala normal.
       gsap.set(panels[0], { autoAlpha: 1, scale: 1, pointerEvents: 'auto' });
@@ -75,14 +80,14 @@ export class GsapService {
             { autoAlpha: 1, scale: 1, ease: 'power2.out', duration: 1.5 },
             enterTime
           );
-          // Habilitar interacción SOLAMENTE cuando la capa esté 100% en pantalla (transición completada)
-          tl.set(panel, { pointerEvents: 'auto' }, enterTime + 1.5);
+          // Habilitar interacción a la mitad de la transición de entrada
+          tl.set(panel, { pointerEvents: 'auto' }, enterTime + 0.75);
         }
 
         // Si NO es el último panel, sale acercándose a la cámara y desapareciendo
         if (i !== totalPanels - 1) {
-          // Deshabilitar interacción en cuanto empiece a desaparecer para devolver el control del scroll a la ventana
-          tl.set(panel, { pointerEvents: 'none' }, stayTime);
+          // Deshabilitar interacción a la mitad de la transición de salida
+          tl.set(panel, { pointerEvents: 'none' }, stayTime + 0.75);
           tl.to(panel, {
             autoAlpha: 0,
             scale: 1.3,
